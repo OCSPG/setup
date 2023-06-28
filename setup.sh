@@ -41,12 +41,6 @@ install_packages_with_yay() {
     done < packages.txt
 }
 
-install_zsh_with_agnoster() {
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
-}
-
-
-
 # Main script execution
 echo "Arch Linux Setup Script"
 echo

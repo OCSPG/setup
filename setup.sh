@@ -40,7 +40,6 @@ install_packages_with_yay() {
         yay -S "$package" 
     done < packages.txt
 }
-#test
 
 # Main script execution
 echo "Arch Linux Setup Script"

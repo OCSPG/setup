@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Function to install prerequisites
 install_prerequisites() {
     sudo pacman -Syu base-devel git
@@ -18,8 +20,7 @@ install_yay() {
     fi
 
     git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
+    (cd yay && makepkg -si)
 }
 
 # Function to install Chaotic AUR
@@ -37,8 +38,12 @@ install_chaotic_aur() {
 # Function to install packages with yay
 install_packages_with_yay() {
     while read -r package; do
-        yay -S "$package" 
+        yay -S "$package"
     done < packages.txt
+}
+
+install_zsh_with_agnoster() {
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 }
 
 # Main script execution
@@ -59,6 +64,10 @@ echo
 
 echo "Installing packages with yay..."
 install_packages_with_yay
+echo
+
+echo "Setting up Zsh with Agnoster theme..."
+install_zsh_with_agnoster
 echo
 
 echo "Setup completed."

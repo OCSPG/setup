@@ -26,14 +26,12 @@ bottles
 breeze-snow-cursor-theme
 cava
 discord
-firefox
+librewolf
 gamemode
 goverlay-git
 mangohud
 mbedtls2
 ntfs-3g
-obs-studio-tytan652
-obs-vkcapture
 os-prober
 pacman-contrib
 papirus-folders-gui

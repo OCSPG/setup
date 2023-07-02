@@ -64,3 +64,6 @@ vulkan-icd-loader
 cups
 samba
 dosbox
+schedtool
+schedtoold
+powerline-fonts

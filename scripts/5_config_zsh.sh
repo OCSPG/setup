@@ -2,12 +2,19 @@
 
 set -e
 
-install_zsh_with_agnoster() {
+install_zsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+configure_agnoster_theme() {
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' ~/.zshrc
 }
 
 # Main script execution
-echo "Setting up Zsh with Agnoster theme..."
-install_zsh_with_agnoster
+echo "Installing Zsh..."
+install_zsh
+echo
+
+echo "Configuring Agnoster theme..."
+configure_agnoster_theme
 echo

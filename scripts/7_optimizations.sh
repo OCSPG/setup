@@ -60,5 +60,11 @@ set_ld_bind_now() {
     fi
 }
 
+# Call the functions
+update_grub_configuration
+configure_systemwide_dri
+configure_kernel_parameters
+set_ld_bind_now
+
 
 

@@ -5,7 +5,7 @@ set -e
 # Function to install packages with yay
 install_packages_with_yay() {
     while read -r package; do
-        yay -S --noconfirm "$package"
+        yay -S "$package"
     done < packages.txt
 }
 
